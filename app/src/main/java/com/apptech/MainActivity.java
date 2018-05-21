@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setListener();
     }
 
+    /**
+     * initialized all global variable
+     */
     private void initialized() {
         extractColor = findViewById(R.id.extracting_colors_from_images);
         bottomTabLayout = findViewById(R.id.bottom_tab_layout);
