@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apptech.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:id="@+id/extracting_colors_from_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Extracting colors from images"/>
+
+            <Button
+                android:id="@+id/bottom_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bottom Tab Layout"/>
+
+            <Button
+                android:id="@+id/complex_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complex Recycler View"/>
+
+            <Button
+                android:id="@+id/screenshot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Screenshot"/>
+
+            <Button
+                android:id="@+id/gps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GPS"/>
+
+            <Button
+                android:id="@+id/service_receiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service Receiver"/>
+
+            <Button
+                android:id="@+id/local_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Local Service"/>
+
+            <Button
+                android:id="@+id/stopwatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stopwatch"/>
+
+            <Button
+                android:id="@+id/rv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="recyclerview search"/>
+
+            <Button
+                android:id="@+id/circular_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Circular Progress Bar"/>
+
+            <Button
+                android:id="@+id/item_selection_with_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Item Selection with Progress Bar"/>
+
+            <Button
+                android:id="@+id/runtime_permissions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Runtime Permissions with Dexter"/>
+
+            <Button
+                android:id="@+id/zip_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ZIP Download Retrofit"/>
+
+            <Button
+                android:id="@+id/zip_unzip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ZIP Unzip"/>
+
+            <Button
+                android:id="@+id/content_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Content Placeholder (Shimmer)"/>
+
+            <Button
+                android:id="@+id/network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Network"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

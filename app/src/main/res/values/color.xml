@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="hot_pink">#fa148a</color>
+    <color name="cyan">#33D9DF</color>
+
+    <color name="tab_indicator_selected">#c71444</color>
+    <color name="tab_indicator_unselected">#cccccc</color>
+    <color name="tab_text_color_selected">#c71444</color>
+    <color name="tab_text_color_unselected">#5e5e5e</color>
+
+    <!--<color name="background">#c71444</color>-->
+    <color name="background">#bc4147</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dialog_button_separator">#9F2636</color>
+
+    <color name="yellow">#FFFF00</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="red">#FF0000</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="gray">#808080</color>
+    <color name="olive">#808000</color>
+    <color name="purple">#800080</color>
+    <color name="maroon">#800000</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="lime">#00FF00</color>
+    <color name="teal">#008080</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000FF</color>
+    <color name="navy">#000080</color>
+    <color name="black">#000000</color>
+
+    <color name="blue_light">#FF33B5E5</color>
+    <color name="purple_light">#FFAA66CC</color>
+    <color name="green_light">#FF99CC00</color>
+    <color name="orange">#FFFFBB33</color>
+    <color name="dark_blue">#FF0099CC</color>
+    <color name="dark_purple">#FF9933CC</color>
+    <color name="dark_green">#FF669900</color>
+    <color name="dark_orange">#FFFF8800</color>
+    <color name="dark_red">#FFCC0000</color>
+
+    <!--Shimmer-->
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="item_name">#0c0c0c</color>
+    <color name="description">#1a1a1a</color>
+    <color name="chef">#777</color>
+    <color name="timestamp">#777</color>
+
+</resources>

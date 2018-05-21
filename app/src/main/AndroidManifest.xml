@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apptech.apptechcomponents">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="com.apptech.ContentPlaceholder.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_custom"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_custom"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.apptech.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.apptech.ExtractingColorsFromImages.ExtractingColorsFromImages" />
+        <activity android:name="com.apptech.BottomTabLayout.BottomTabLayout" />
+        <activity android:name="com.apptech.ComplexRecyclerView.Activity.ComplexRecyclerView" />
+
+        <receiver
+            android:name="com.apptech.ComplexRecyclerView.Utils.InternetConnectionReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.apptech.Screenshot.ScreenshotActivity" />
+        <activity android:name="com.apptech.Gps.GpsActivity" />
+        <activity android:name="com.apptech.ServiceReceiver.ServiceActivity" />
+
+        <service
+            android:name="com.apptech.ServiceReceiver.DownloadService"
+            android:process=":testing" />
+
+        <activity android:name="com.apptech.LocalService.LocalServiceActivity" />
+
+        <service
+            android:name="com.apptech.LocalService.LocalWordService"
+            android:label="Word service" />
+        <service
+            android:name="com.apptech.LocalService.TestJobService"
+            android:label="Word service"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name="com.apptech.LocalService.MyStartServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.apptech.Stopwatch.StopwatchActivity" />
+        <activity android:name="com.apptech.RecyclerviewSearch.RecyclerviewSearch" />
+        <activity android:name="com.apptech.CircularProgressBar.CircularProgressBar" />
+        <activity android:name="com.apptech.SelectionWithProgress.SelectionWithProgressBar" />
+        <activity android:name="com.apptech.RuntimePermission.RuntimePermission" />
+        <activity android:name="com.apptech.ZipDownload.ZipDownloadActivity" />
+
+        <service android:name="com.apptech.ZipDownload.DownloadService" />
+
+        <activity android:name="com.apptech.ZipUnzip.ZipUnzipActivity" />
+        <activity android:name="com.apptech.Networking.NetworkActivity" />
+        <activity android:name="com.apptech.ContentPlaceholder.ContentPlaceholderActivity" />
+        <activity android:name="com.apptech.ContentPlaceholder.ProfileActivity"></activity>
+    </application>
+
+</manifest>
