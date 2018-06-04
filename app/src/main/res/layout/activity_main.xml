@@ -102,17 +102,17 @@
                 android:text="ZIP Unzip"/>
 
             <Button
+                android:id="@+id/expandable_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expandable List"/>
+
+            <Button
                 android:id="@+id/content_placeholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Content Placeholder (Shimmer)"/>
-
-            <Button
-                android:id="@+id/network"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Network"
-                android:layout_marginBottom="20dp"/>
+                android:text="Content Placeholder (Shimmer)"
+                android:layout_marginBottom="20dp" />
 
         </LinearLayout>
     </ScrollView>

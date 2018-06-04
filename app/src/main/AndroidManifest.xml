@@ -73,9 +73,9 @@
         <service android:name="com.apptech.ZipDownload.DownloadService" />
 
         <activity android:name="com.apptech.ZipUnzip.ZipUnzipActivity" />
-        <activity android:name="com.apptech.Networking.NetworkActivity" />
         <activity android:name="com.apptech.ContentPlaceholder.ContentPlaceholderActivity" />
-        <activity android:name="com.apptech.ContentPlaceholder.ProfileActivity"></activity>
+        <activity android:name="com.apptech.ContentPlaceholder.ProfileActivity" />
+        <activity android:name="com.apptech.ExpandableListview.ExpandableListActivity"></activity>
     </application>
 
 </manifest>

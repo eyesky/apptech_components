@@ -10,10 +10,10 @@ import com.apptech.BottomTabLayout.BottomTabLayout;
 import com.apptech.CircularProgressBar.CircularProgressBar;
 import com.apptech.ComplexRecyclerView.Activity.ComplexRecyclerView;
 import com.apptech.ContentPlaceholder.ContentPlaceholderActivity;
+import com.apptech.ExpandableListview.ExpandableListActivity;
 import com.apptech.ExtractingColorsFromImages.ExtractingColorsFromImages;
 import com.apptech.Gps.GpsActivity;
 import com.apptech.LocalService.LocalServiceActivity;
-import com.apptech.Networking.NetworkActivity;
 import com.apptech.RecyclerviewSearch.RecyclerviewSearch;
 import com.apptech.RuntimePermission.RuntimePermission;
 import com.apptech.Screenshot.ScreenshotActivity;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button extractColor, bottomTabLayout, complexRecyclerView, screenshot, gps, serviceReceiver, localService,
             stopwatch, recyclerViewSearch, circularProgressBar, itemSelectionWithProgressBar, dexterPermission,
-            zipDownloadRetrofit, zipUnzip, contentPlaceholder, network;
+            zipDownloadRetrofit, zipUnzip, expandableList, contentPlaceholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dexterPermission = findViewById(R.id.runtime_permissions);
         zipDownloadRetrofit = findViewById(R.id.zip_download);
         zipUnzip = findViewById(R.id.zip_unzip);
+        expandableList = findViewById(R.id.expandable_list);
         contentPlaceholder = findViewById(R.id.content_placeholder);
-        network = findViewById(R.id.network);
     }
 
     private void setListener() {
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dexterPermission.setOnClickListener(this);
         zipDownloadRetrofit.setOnClickListener(this);
         zipUnzip.setOnClickListener(this);
+        expandableList.setOnClickListener(this);
         contentPlaceholder.setOnClickListener(this);
-        network.setOnClickListener(this);
     }
 
     @Override
@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, ContentPlaceholderActivity.class));
                 break;
 
-            case R.id.network:
-                startActivity(new Intent(this, NetworkActivity.class));
+            case R.id.expandable_list:
+                startActivity(new Intent(this, ExpandableListActivity.class));
                 break;
 
             default:

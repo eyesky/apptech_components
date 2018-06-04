@@ -42,23 +42,23 @@ public class ZipDownloadActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_download)
-    public void downloadFile(){
+    public void downloadFile() {
 
-        if(checkPermission()){
+        if (checkPermission()) {
             startDownload();
         } else {
             requestPermission();
         }
     }
 
-    private void startDownload(){
+    private void startDownload() {
 
-        Intent intent = new Intent(this,DownloadService.class);
+        Intent intent = new Intent(this, DownloadService.class);
         startService(intent);
 
     }
 
-    private void registerReceiver(){
+    private void registerReceiver() {
 
         LocalBroadcastManager bManager = LocalBroadcastManager.getInstance(this);
         IntentFilter intentFilter = new IntentFilter();
@@ -71,27 +71,27 @@ public class ZipDownloadActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            if(intent.getAction().equals(MESSAGE_PROGRESS)){
+            if (intent.getAction().equals(MESSAGE_PROGRESS)) {
 
                 Download download = intent.getParcelableExtra("download");
                 mProgressBar.setProgress(download.getProgress());
-                if(download.getProgress() == 100){
+                if (download.getProgress() == 100) {
 
                     mProgressText.setText("File Download Complete");
 
                 } else {
 
-                    mProgressText.setText(String.format("Downloaded (%d/%d) MB",download.getCurrentFileSize(),download.getTotalFileSize()));
+                    mProgressText.setText(String.format("Downloaded (%d/%d) MB", download.getCurrentFileSize(), download.getTotalFileSize()));
 
                 }
             }
         }
     };
 
-    private boolean checkPermission(){
+    private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (result == PackageManager.PERMISSION_GRANTED){
+        if (result == PackageManager.PERMISSION_GRANTED) {
 
             return true;
 
@@ -101,9 +101,9 @@ public class ZipDownloadActivity extends AppCompatActivity {
         }
     }
 
-    private void requestPermission(){
+    private void requestPermission() {
 
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},PERMISSION_REQUEST_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
 
     }
 
@@ -116,7 +116,7 @@ public class ZipDownloadActivity extends AppCompatActivity {
                     startDownload();
                 } else {
 
-                    Snackbar.make(findViewById(R.id.coordinatorLayout),"Permission Denied, Please allow to proceed !", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.coordinatorLayout), "Permission Denied, Please allow to proceed !", Snackbar.LENGTH_LONG).show();
 
                 }
                 break;

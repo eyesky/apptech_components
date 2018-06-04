@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -80,7 +79,6 @@ public class ExtractingColorsFromImages extends AppCompatActivity {
                     String imagePath = getPath(selectedImage);
 
                     final int THUMBSIZE = 64;
-                    Log.e("onActivityResult: ",imagePath);
 
                     Bitmap ThumbImage = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(imagePath),
                             THUMBSIZE, THUMBSIZE);
