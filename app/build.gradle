@@ -19,16 +19,14 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     // https://mvnrepository.com/artifact/commons-io/commons-io
-    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
-
+    implementation 'commons-io:commons-io:2.5'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:palette-v7:27.1.1'
@@ -38,23 +36,20 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:retrofit:2.0.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
-
     // glide image library
     implementation 'com.github.bumptech.glide:glide:4.3.1'
-
     // for custom progress dialog
     implementation 'com.github.d-max:spots-dialog:0.4@aar'
-
     // Dexter runtime permissions
     implementation 'com.karumi:dexter:4.2.0'
-
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     // volley http library
     implementation 'com.android.volley:volley:1.0.0'
     implementation 'com.google.code.gson:gson:2.6.2'
-
     // Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    // this lib for change the status bar color for pre-lollipop device
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.4'
 }

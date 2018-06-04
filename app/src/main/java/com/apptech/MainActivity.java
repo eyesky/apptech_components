@@ -1,10 +1,18 @@
 package com.apptech;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.apptech.BottomTabLayout.BottomTabLayout;
 import com.apptech.CircularProgressBar.CircularProgressBar;
@@ -23,9 +31,13 @@ import com.apptech.Stopwatch.StopwatchActivity;
 import com.apptech.ZipDownload.ZipDownloadActivity;
 import com.apptech.ZipUnzip.ZipUnzipActivity;
 import com.apptech.apptechcomponents.R;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+
+import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    public Typeface typefaceCaviarDreams;
+    protected Toolbar toolbar;
     private Button extractColor, bottomTabLayout, complexRecyclerView, screenshot, gps, serviceReceiver, localService,
             stopwatch, recyclerViewSearch, circularProgressBar, itemSelectionWithProgressBar, dexterPermission,
             zipDownloadRetrofit, zipUnzip, expandableList, contentPlaceholder;
@@ -34,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        setStatusBarColor(getWindow(), this, getResources().getColor(R.color.colorPrimaryDark), true);
 
         initialized();
         setListener();
@@ -59,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         zipUnzip = findViewById(R.id.zip_unzip);
         expandableList = findViewById(R.id.expandable_list);
         contentPlaceholder = findViewById(R.id.content_placeholder);
+
+        toolbar = findViewById(R.id.toolbar);
+        initToolbar();
     }
 
     private void setListener() {
@@ -78,6 +95,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         zipUnzip.setOnClickListener(this);
         expandableList.setOnClickListener(this);
         contentPlaceholder.setOnClickListener(this);
+    }
+
+    protected void initToolbar() {
+        setSupportActionBar(toolbar);
+
+
+        setTitle("AppTech Component");
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+//            actionBar.setHomeAsUpIndicator(R.drawable.back_arrow_white); // for custom back icon
+//            actionBar.setDisplayHomeAsUpEnabled(true); // for build in back icon
+        }
+        TextView titleTextView = getTextViewFrom(toolbar, "mTitleTextView");
+        titleTextView.setTextColor(Color.WHITE);
+        if (titleTextView != null) {
+            typefaceCaviarDreams = Typeface.createFromAsset(getAssets(), "font/CaviarDreams.ttf");
+            titleTextView.setTypeface(typefaceCaviarDreams);
+        }
+    }
+
+    public TextView getTextViewFrom(Toolbar toolbar, String declaredField) {
+        if (toolbar == null || declaredField == null) return null;
+        TextView textView = null;
+        Field f = null;
+        try {
+            f = toolbar.getClass().getDeclaredField(declaredField);
+            f.setAccessible(true);
+            textView = (TextView) f.get(toolbar);
+        } catch (NoSuchFieldException e) {
+        } catch (IllegalAccessException e) {
+        }
+
+        return textView;
+    }
+
+    /**
+     * This method for change the pre-lollipop status bar color
+     * using lib that define in gradle. eg.
+     * implementation 'com.readystatesoftware.systembartint:systembartint:1.0.4'
+     * @param window
+     * @param activity
+     * @param colorId
+     * @param isNavi
+     */
+    public void setStatusBarColor(Window window, Activity activity, int colorId, boolean isNavi) {
+        if (window != null && activity != null) {
+            //window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            SystemBarTintManager tint = new SystemBarTintManager(activity);
+            tint.setStatusBarTintEnabled(true);
+            //tint.setNavigationBarTintEnabled(isNavi && getIsPortraitMode(activity));
+            tint.setTintColor(colorId);
+
+        }
     }
 
     @Override
